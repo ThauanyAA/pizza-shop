@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import { z } from 'zod'
 
 import { Button } from '@/components/ui/button'
@@ -20,8 +21,23 @@ export function SignIn() {
 
   async function handleSignIn(data: SignInFormData) {
     console.log(data)
-
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      toast.success(
+        'Enviamos um e-mail com as instruções para acessar o painel',
+        {
+          action: {
+            label: 'Reenviar e-mail',
+            onClick: () => {
+              handleSignIn(data)
+            },
+          },
+        },
+      )
+    } catch (error) {
+      console.error(error)
+      toast.error('Credenciais inválidas')
+    }
   }
 
   return (
