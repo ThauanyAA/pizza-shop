@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router'
 import z from 'zod'
 
 import { getOrders } from '@/api/get-order'
-import { Pagination } from '@/components/ui/pagination'
+import { Pagination } from '@/components/pagination'
 import {
   Table,
   TableBody,
