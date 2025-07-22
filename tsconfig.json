@@ -9,5 +9,8 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "types": [
+    "vitest/globals"
+  ],
 }
