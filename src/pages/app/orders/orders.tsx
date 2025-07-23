@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useSearchParams } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
 import z from 'zod'
 
 import { getOrders } from '@/api/get-order'
