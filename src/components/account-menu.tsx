@@ -63,7 +63,7 @@ export function AccountMenu() {
           <DropdownMenuLabel className="flex flex-col">
             {isLoadingProfile ? (
               <div className="space-y-1.5">
-                <Skeleton className="h-4 w-40" />
+                <Skeleton className="h-4 w-32" />
                 <Skeleton className="h-3 w-24" />
               </div>
             ) : (
@@ -84,8 +84,8 @@ export function AccountMenu() {
           </DialogTrigger>
           <DropdownMenuItem
             asChild
-            className="text-rose-500 dark:text-rose-400"
             disabled={isSigningOut}
+            className="text-rose-500 dark:text-rose-400"
           >
             <button className="w-full" onClick={() => signOutFn()}>
               <LogOut className="mr-2 h-4 w-4" />
@@ -94,6 +94,7 @@ export function AccountMenu() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
       <StoreProfileDialog />
     </Dialog>
   )
