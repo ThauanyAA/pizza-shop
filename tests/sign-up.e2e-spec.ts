@@ -27,7 +27,7 @@ test('sign up with error', async ({ page }) => {
 
   const toast = page.getByText('Erro ao cadastrar o restaurante')
 
-  expect(toast).toBeVisible()
+  await expect(toast).toBeVisible()
 })
 
 test('navigate to login page', async ({ page }) => {
@@ -35,5 +35,5 @@ test('navigate to login page', async ({ page }) => {
 
   await page.getByRole('link', { name: 'Fazer Login' }).click()
 
-  expect(page.url()).toContain('/sign-in')
+  await expect(page.url()).toContain('/sign-in')
 })

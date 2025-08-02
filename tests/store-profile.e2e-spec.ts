@@ -23,5 +23,5 @@ test('update profile successfully', async ({ page }) => {
     .getByRole('dialog', { name: 'Perfil da loja' })
     .waitFor({ state: 'hidden' })
 
-  expect(page.getByRole('button', { name: 'Rocket Pizza' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Rocket Pizza' })).toBeVisible()
 })
